@@ -529,11 +529,19 @@ int main()
 				{
 					//std::string c = text; std only eng, sf == rus
 					
-					lada.input(txt2);
+					if (txt2.getSize() == 7)
+					{
+						lada.input(txt2);
 
-					lada.output();
+						lada.output();
 
-					key = 18;
+						key = 18;
+					}
+					//проверка на символы очень сложна :(
+					else
+					{
+						key = 10000000;
+					}
 				}
 			}
 
@@ -704,7 +712,11 @@ int main()
 
 				window.draw(Number_sprite);
 
-				lada.text.setPosition(960, 460);
+				lada.text.setCharacterSize(100);
+
+				lada.text.setFillColor(sf::Color::Black);
+
+				lada.text.setPosition(980, 420);
 
 				window.draw(lada.text);
 			}
