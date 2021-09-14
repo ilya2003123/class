@@ -5,6 +5,39 @@
 
 sf::Font font_1;
 
+class pechenki
+{
+private:
+	int radius_m, radius_sm;
+
+public:
+	void input(int x, int y);
+	void output();
+	void preobrazhenskiy()
+	{
+		radius_m = radius_m + radius_sm / 100;
+		radius_sm = radius_sm % 100;
+	}
+	sf::Text text;
+};
+
+void pechenki::input(int x, int y)
+{
+	radius_m = x;
+	radius_sm = y;
+	preobrazhenskiy();
+}
+
+void pechenki::output()
+{
+	text.setFont(font_1);
+	text.setCharacterSize(65);
+	text.setFillColor(sf::Color::Blue);
+
+	text.setString(std::to_string(radius_m) + " м " + std::to_string(radius_sm) + " см ");
+	text.setPosition(700, 360);
+}
+
 class car
 {
 private:
@@ -49,10 +82,13 @@ public:
 
 	void preobrazhenskiy()
 	{
-		km = km + m / 1000;
-		m = m % 1000;
 		m = m + sm / 100;
 		sm = sm % 100;
+	}
+	void preobrazhenskiy_1()
+	{
+		km = km + m / 1000;
+		m = m % 1000;
 	}
 	sf::Text text;
 };
@@ -63,6 +99,7 @@ void rast::input(int x, int y, int z)
 	m = y;
 	sm = z;
 	preobrazhenskiy();
+	preobrazhenskiy_1();
 }
 
 void rast::output()
@@ -244,15 +281,40 @@ int main()
 	sf::Sprite Number_sprite;
 	Number_sprite.setTexture(Number_texture);
 
+	sf::Image oreo_mini_image;
+	oreo_mini_image.loadFromFile("image/oreo_mini.png");
+	sf::Texture oreo_mini_texture;
+	oreo_mini_texture.loadFromImage(oreo_mini_image);
+	sf::Sprite oreo_mini_sprite;
+	oreo_mini_sprite.setTexture(oreo_mini_texture);
+
+	sf::Image oreo_image;
+	oreo_image.loadFromFile("image/oreo.png");
+	sf::Texture oreo_texture;
+	oreo_texture.loadFromImage(oreo_image);
+	sf::Sprite oreo_sprite;
+	oreo_sprite.setTexture(oreo_texture);
+
+	sf::Image bab_image;
+	bab_image.loadFromFile("image/bab.png");
+	sf::Texture bab_texture;
+	bab_texture.loadFromImage(bab_image);
+	sf::Sprite bab_sprite;
+	bab_sprite.setTexture(bab_texture);
+
 	int key = -1;
 
 	bool a = true;
+
+	sf::String txt2;
 
 	rast mox, mak, roza, papor, rogoz, trost, camish, vishnya, orex, bereza, topol, sekvoya;
 
 	car lada;
 
-	sf::String txt2;
+	pechenki oreo_mini, oreo, babushka;
+
+	
 
 
 	while (window.isOpen())
@@ -362,6 +424,26 @@ int main()
 			window.draw(fon_1_sprite);
 
 			window.draw(txt);
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab) || sf::Keyboard::isKeyPressed(sf::Keyboard::Q)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::E)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::R) || sf::Keyboard::isKeyPressed(sf::Keyboard::T)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::Y) || sf::Keyboard::isKeyPressed(sf::Keyboard::U)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::I) || sf::Keyboard::isKeyPressed(sf::Keyboard::O)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::P) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::F) || sf::Keyboard::isKeyPressed(sf::Keyboard::G)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::H) || sf::Keyboard::isKeyPressed(sf::Keyboard::J)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::K) || sf::Keyboard::isKeyPressed(sf::Keyboard::L)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::C)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::V) || sf::Keyboard::isKeyPressed(sf::Keyboard::B)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::N) || sf::Keyboard::isKeyPressed(sf::Keyboard::M)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)
+				|| sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) || sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt))
+
+			{
+				key = 10000000;
+			}
 
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
@@ -480,6 +562,10 @@ int main()
 					else if (l > 11200)
 					{
 						key = 10000000;
+
+						mox.input(0, 0, l);
+
+						mox.output();
 					}
 
 				}
@@ -552,6 +638,76 @@ int main()
 				a = false;
 
 				window.draw(fon_3_sprite);
+
+				window.draw(txt);
+
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab) || sf::Keyboard::isKeyPressed(sf::Keyboard::Q)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::E)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::R) || sf::Keyboard::isKeyPressed(sf::Keyboard::T)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::Y) || sf::Keyboard::isKeyPressed(sf::Keyboard::U)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::I) || sf::Keyboard::isKeyPressed(sf::Keyboard::O)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::P) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::F) || sf::Keyboard::isKeyPressed(sf::Keyboard::G)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::H) || sf::Keyboard::isKeyPressed(sf::Keyboard::J)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::K) || sf::Keyboard::isKeyPressed(sf::Keyboard::L)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::C)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::V) || sf::Keyboard::isKeyPressed(sf::Keyboard::B)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::N) || sf::Keyboard::isKeyPressed(sf::Keyboard::M)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)
+					|| sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) || sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt))
+
+				{
+					key = 10000000;
+				}
+
+
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+				{
+					if (!txt2.isEmpty())
+						txt2.erase(0, 1);
+					if (!txt2.isEmpty()) 
+					{
+						int r = atoi(std::string(txt2).c_str());
+						if (r <= 1)
+						{
+							oreo_mini.input(0, r);
+
+							oreo_mini.output();
+
+							key = 19;
+						}
+						
+						else if (r > 1 && r <= 2)
+						{
+							oreo.input(0, r);
+
+							oreo.output();
+
+							key = 20;
+						}
+
+						else if (r > 2 && r <= 5)
+						{
+							babushka.input(0, r);
+
+							babushka.output();
+
+							key = 21;
+						}
+
+						else
+						{
+							key = 10000001;
+
+
+
+							oreo.input(0, r);
+							
+							oreo.output();
+						}
+					}
+				}
 			}
 
 			else if (key == 4)
@@ -721,6 +877,39 @@ int main()
 				window.draw(lada.text);
 			}
 
+			else if (key == 19)
+			{
+				a = false;
+
+				window.draw(oreo_mini_sprite);
+
+				oreo_mini.text.setPosition(1100, 410);
+
+				window.draw(oreo_mini.text);
+			}
+
+			else if (key == 20)
+			{
+				a = false;
+
+				window.draw(oreo_sprite);
+
+				oreo.text.setPosition(1100, 510);
+
+				window.draw(oreo.text);
+			}
+
+			else if (key == 21)
+			{
+				a = false;
+
+				window.draw(bab_sprite);
+
+				babushka.text.setPosition(960, 460);
+
+				window.draw(babushka.text);
+			}
+
 
 			else if (key == 10000000)
 			{
@@ -728,10 +917,21 @@ int main()
 
 				window.draw(fon_7_sprite);
 
-				mox.text.setPosition(700, 480);
+				mox.text.setPosition(600, 480);
 
 				window.draw(mox.text);
 			}
+
+			else if (key == 10000001)
+			{
+				a = false;
+
+				window.draw(fon_7_sprite);
+
+				oreo.text.setPosition(700, 480);
+
+				window.draw(oreo.text);
+			 }
 
 			else
 			{
