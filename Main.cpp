@@ -1,7 +1,11 @@
+#pragma comment(linker, "/STACK:2000000") // дл€ ускорени€ программы (не всегда)
+#pragma comment(linker, "/HEAP:2000000")
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <SFML/Audio.hpp>
 
 sf::Font font_1;
 
@@ -134,173 +138,123 @@ int main()
 	txt.setCharacterSize(65);
 	txt.setFillColor(sf::Color::Blue);
 
-	sf::Image fon_image;
-	fon_image.loadFromFile("image/Fon.png");
 	sf::Texture fon_texture;
-	fon_texture.loadFromImage(fon_image);
+	fon_texture.loadFromFile("image/Fon.png");
 	sf::Sprite fon_sprite;
 	fon_sprite.setTexture(fon_texture);
 
-	sf::Image fon_1_image;
-	fon_1_image.loadFromFile("image/Fon_1.png");
 	sf::Texture fon_1_texture;
-	fon_1_texture.loadFromImage(fon_1_image);
+	fon_1_texture.loadFromFile("image/Fon_1.png");
 	sf::Sprite fon_1_sprite;
 	fon_1_sprite.setTexture(fon_1_texture);
 
-	sf::Image fon_2_image;
-	fon_2_image.loadFromFile("image/Fon_2.png");
 	sf::Texture fon_2_texture;
-	fon_2_texture.loadFromImage(fon_2_image);
+	fon_2_texture.loadFromFile("image/Fon_2.png");
 	sf::Sprite fon_2_sprite;
 	fon_2_sprite.setTexture(fon_2_texture);
 
-	sf::Image fon_3_image;
-	fon_3_image.loadFromFile("image/Fon_3.png");
 	sf::Texture fon_3_texture;
-	fon_3_texture.loadFromImage(fon_3_image);
+	fon_3_texture.loadFromFile("image/Fon_3.png");
 	sf::Sprite fon_3_sprite;
 	fon_3_sprite.setTexture(fon_3_texture);
 
-	sf::Image fon_4_image;
-	fon_4_image.loadFromFile("image/Fon_4.png");
-	sf::Texture fon_4_texture;
-	fon_4_texture.loadFromImage(fon_4_image);
-	sf::Sprite fon_4_sprite;
-	fon_4_sprite.setTexture(fon_4_texture);
-
-	sf::Image fon_5_image;
-	fon_5_image.loadFromFile("image/Fon_5.png");
 	sf::Texture fon_5_texture;
-	fon_5_texture.loadFromImage(fon_5_image);
+	fon_5_texture.loadFromFile("image/Fon_5.png");
 	sf::Sprite fon_5_sprite;
 	fon_5_sprite.setTexture(fon_5_texture);
 
-	sf::Image fon_6_image;
-	fon_6_image.loadFromFile("image/Fon_6.png");
 	sf::Texture fon_6_texture;
-	fon_6_texture.loadFromImage(fon_6_image);
+	fon_6_texture.loadFromFile("image/Fon_6.png");
 	sf::Sprite fon_6_sprite;
 	fon_6_sprite.setTexture(fon_6_texture);
 
-	sf::Image fon_7_image;
-	fon_7_image.loadFromFile("image/Fon_7.png");
 	sf::Texture fon_7_texture;
-	fon_7_texture.loadFromImage(fon_7_image);
+	fon_7_texture.loadFromFile("image/Fon_7.png");
 	sf::Sprite fon_7_sprite;
 	fon_7_sprite.setTexture(fon_7_texture);
 
-	sf::Image mox_image;
-	mox_image.loadFromFile("image/Mox.png");
 	sf::Texture mox_texture;
-	mox_texture.loadFromImage(mox_image);
+	mox_texture.loadFromFile("image/Mox.png");
 	sf::Sprite mox_sprite;
 	mox_sprite.setTexture(mox_texture);
 
-	sf::Image mak_image;
-	mak_image.loadFromFile("image/mak.png");
 	sf::Texture mak_texture;
-	mak_texture.loadFromImage(mak_image);
+	mak_texture.loadFromFile("image/mak.png");
 	sf::Sprite mak_sprite;
 	mak_sprite.setTexture(mak_texture);
 
-	sf::Image roza_image;
-	roza_image.loadFromFile("image/roza.png");
 	sf::Texture roza_texture;
-	roza_texture.loadFromImage(roza_image);
+	roza_texture.loadFromFile("image/roza.png");
 	sf::Sprite roza_sprite;
 	roza_sprite.setTexture(roza_texture);
 
-	sf::Image papor_image;
-	papor_image.loadFromFile("image/papor.png");
 	sf::Texture papor_texture;
-	papor_texture.loadFromImage(papor_image);
+	papor_texture.loadFromFile("image/papor.png");
 	sf::Sprite papor_sprite;
 	papor_sprite.setTexture(papor_texture);
 
-	sf::Image rogoz_image;
-	rogoz_image.loadFromFile("image/rogoz.png");
 	sf::Texture rogoz_texture;
-	rogoz_texture.loadFromImage(rogoz_image);
+	rogoz_texture.loadFromFile("image/rogoz.png");
 	sf::Sprite rogoz_sprite;
 	rogoz_sprite.setTexture(rogoz_texture);
 
-	sf::Image trost_image;
-	trost_image.loadFromFile("image/trost.png");
 	sf::Texture trost_texture;
-	trost_texture.loadFromImage(trost_image);
+	trost_texture.loadFromFile("image/trost.png");
 	sf::Sprite trost_sprite;
 	trost_sprite.setTexture(trost_texture);
 
-	sf::Image camish_image;
-	camish_image.loadFromFile("image/camish.png");
 	sf::Texture camish_texture;
-	camish_texture.loadFromImage(camish_image);
+	camish_texture.loadFromFile("image/camish.png");
 	sf::Sprite camish_sprite;
 	camish_sprite.setTexture(camish_texture);
 
-	sf::Image vishn_image;
-	vishn_image.loadFromFile("image/vishn.png");
 	sf::Texture vishn_texture;
-	vishn_texture.loadFromImage(vishn_image);
+	vishn_texture.loadFromFile("image/vishn.png");
 	sf::Sprite vishn_sprite;
 	vishn_sprite.setTexture(vishn_texture);
 
-	sf::Image orex_image;
-	orex_image.loadFromFile("image/orex.png");
 	sf::Texture orex_texture;
-	orex_texture.loadFromImage(orex_image);
+	orex_texture.loadFromFile("image/orex.png");
 	sf::Sprite orex_sprite;
 	orex_sprite.setTexture(orex_texture);
 
-	sf::Image bereza_image;
-	bereza_image.loadFromFile("image/bereza.png");
 	sf::Texture bereza_texture;
-	bereza_texture.loadFromImage(bereza_image);
+	bereza_texture.loadFromFile("image/bereza.png");
 	sf::Sprite bereza_sprite;
 	bereza_sprite.setTexture(bereza_texture);
 
-	sf::Image topol_image;
-	topol_image.loadFromFile("image/topol.png");
 	sf::Texture topol_texture;
-	topol_texture.loadFromImage(topol_image);
+	topol_texture.loadFromFile("image/topol.png");
 	sf::Sprite topol_sprite;
 	topol_sprite.setTexture(topol_texture);
 
-	sf::Image sekvoya_image;
-	sekvoya_image.loadFromFile("image/sekvoya.png");
 	sf::Texture sekvoya_texture;
-	sekvoya_texture.loadFromImage(sekvoya_image);
+	sekvoya_texture.loadFromFile("image/sekvoya.png");
 	sf::Sprite sekvoya_sprite;
 	sekvoya_sprite.setTexture(sekvoya_texture);
 
-	sf::Image Number_image;
-	Number_image.loadFromFile("image/Number.png");
 	sf::Texture Number_texture;
-	Number_texture.loadFromImage(Number_image);
+	Number_texture.loadFromFile("image/Number.png");
 	sf::Sprite Number_sprite;
 	Number_sprite.setTexture(Number_texture);
 
-	sf::Image oreo_mini_image;
-	oreo_mini_image.loadFromFile("image/oreo_mini.png");
 	sf::Texture oreo_mini_texture;
-	oreo_mini_texture.loadFromImage(oreo_mini_image);
+	oreo_mini_texture.loadFromFile("image/oreo_mini.png");
 	sf::Sprite oreo_mini_sprite;
 	oreo_mini_sprite.setTexture(oreo_mini_texture);
 
-	sf::Image oreo_image;
-	oreo_image.loadFromFile("image/oreo.png");
 	sf::Texture oreo_texture;
-	oreo_texture.loadFromImage(oreo_image);
+	oreo_texture.loadFromFile("image/oreo.png");
 	sf::Sprite oreo_sprite;
 	oreo_sprite.setTexture(oreo_texture);
 
-	sf::Image bab_image;
-	bab_image.loadFromFile("image/bab.png");
 	sf::Texture bab_texture;
-	bab_texture.loadFromImage(bab_image);
+	bab_texture.loadFromFile("image/bab.png");
 	sf::Sprite bab_sprite;
 	bab_sprite.setTexture(bab_texture);
+
+	sf::Music music;
+	
 
 	int key = -1;
 
@@ -352,7 +306,7 @@ int main()
 					if (event.text.unicode == '\b' && !txt2.isEmpty())
 					{
 						//тоже самое  что и pop back удалил последний символ
-						txt2.erase(txt2.getSize() - 1, 1); //«амена аналогией из sf ради русского €зыка
+						txt2.erase(txt2.getSize() - 1, 1); //«амена аналогией из sfml ради русского €зыка
 					}
 
 					else
@@ -378,6 +332,8 @@ int main()
 				a = true;
 
 				txt2.clear();
+
+				music.stop();
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) && a == true)
@@ -391,11 +347,6 @@ int main()
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4) && a == true)
-			{
-				key = 4;
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5) && a == true)
 			{
 				key = 5;
 			}
@@ -422,29 +373,8 @@ int main()
 			a = false;
 
 			window.draw(fon_1_sprite);
-
+			
 			window.draw(txt);
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab) || sf::Keyboard::isKeyPressed(sf::Keyboard::Q)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::E)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::R) || sf::Keyboard::isKeyPressed(sf::Keyboard::T)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::Y) || sf::Keyboard::isKeyPressed(sf::Keyboard::U)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::I) || sf::Keyboard::isKeyPressed(sf::Keyboard::O)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::P) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::F) || sf::Keyboard::isKeyPressed(sf::Keyboard::G)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::H) || sf::Keyboard::isKeyPressed(sf::Keyboard::J)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::K) || sf::Keyboard::isKeyPressed(sf::Keyboard::L)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::C)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::V) || sf::Keyboard::isKeyPressed(sf::Keyboard::B)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::N) || sf::Keyboard::isKeyPressed(sf::Keyboard::M)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)
-				|| sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) || sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt))
-
-			{
-				key = 10000000;
-			}
-
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 			{
@@ -573,32 +503,6 @@ int main()
 			}
 		}
 
-
-		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) || sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) || sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Num5) || sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Num7) || sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Num9) || sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Tab) || sf::Keyboard::isKeyPressed(sf::Keyboard::Q)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::E)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::R) || sf::Keyboard::isKeyPressed(sf::Keyboard::T)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Y) || sf::Keyboard::isKeyPressed(sf::Keyboard::U)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::I) || sf::Keyboard::isKeyPressed(sf::Keyboard::O)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::P) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::F) || sf::Keyboard::isKeyPressed(sf::Keyboard::G)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::H) || sf::Keyboard::isKeyPressed(sf::Keyboard::J)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::K) || sf::Keyboard::isKeyPressed(sf::Keyboard::L)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::C)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::V) || sf::Keyboard::isKeyPressed(sf::Keyboard::B)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::N) || sf::Keyboard::isKeyPressed(sf::Keyboard::M)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)
-			|| sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) || sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt))
-
-		{
-			key = 22;
-		}*/
-
-
 		else if (key == 2)
 		{
 			a = false;
@@ -626,7 +530,7 @@ int main()
 					//проверка на символы очень сложна :(
 					else
 					{
-						key = 10000000;
+						key = 10000002;
 					}
 				}
 			}
@@ -640,27 +544,6 @@ int main()
 				window.draw(fon_3_sprite);
 
 				window.draw(txt);
-
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab) || sf::Keyboard::isKeyPressed(sf::Keyboard::Q)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::E)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::R) || sf::Keyboard::isKeyPressed(sf::Keyboard::T)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::Y) || sf::Keyboard::isKeyPressed(sf::Keyboard::U)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::I) || sf::Keyboard::isKeyPressed(sf::Keyboard::O)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::P) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::F) || sf::Keyboard::isKeyPressed(sf::Keyboard::G)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::H) || sf::Keyboard::isKeyPressed(sf::Keyboard::J)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::K) || sf::Keyboard::isKeyPressed(sf::Keyboard::L)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::C)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::V) || sf::Keyboard::isKeyPressed(sf::Keyboard::B)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::N) || sf::Keyboard::isKeyPressed(sf::Keyboard::M)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)
-					|| sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) || sf::Keyboard::isKeyPressed(sf::Keyboard::RAlt))
-
-				{
-					key = 10000000;
-				}
-
 
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 				{
@@ -700,8 +583,6 @@ int main()
 						{
 							key = 10000001;
 
-
-
 							oreo.input(0, r);
 							
 							oreo.output();
@@ -710,18 +591,99 @@ int main()
 				}
 			}
 
-			else if (key == 4)
-			{
-				a = false;
-
-				window.draw(fon_4_sprite);
-			}
-
 			else if (key == 5)
 			{
 				a = false;
 
 				window.draw(fon_5_sprite);
+
+				window.draw(txt);
+
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+				{
+					if (!txt2.isEmpty())
+						txt2.erase(0, 1);
+					if (!txt2.isEmpty())
+					{
+						int m = atoi(std::string(txt2).c_str());
+						if (m == 1)
+						{
+							music.openFromFile("music/1.wav");
+
+							music.play();
+						}
+
+						else if (m == 2)
+						{
+							music.openFromFile("music/2.wav");
+
+							music.play();
+						}
+
+						else if (m == 3)
+						{
+							music.openFromFile("music/3.wav");
+
+							music.play();
+						}
+
+						else if (m == 4)
+						{
+							music.openFromFile("music/4.wav");
+
+							music.play();
+						}
+
+						else if (m == 5)
+						{
+							music.openFromFile("music/5.wav");
+
+							music.play();
+						}
+
+						else if (m == 6)
+						{
+							music.openFromFile("music/6.wav");
+
+							music.play();
+						}
+
+						else if (m == 7)
+						{
+							music.openFromFile("music/7.wav");
+
+							music.play();
+						}
+
+						else if (m == 8)
+						{
+							music.openFromFile("music/8.wav");
+
+							music.play();
+						}
+
+						else if (m == 9)
+						{
+							music.openFromFile("music/9.wav");
+
+							music.play();
+						}
+
+						else if (m == 10)
+						{
+							music.openFromFile("music/10.wav");
+
+							music.play();
+						}
+
+						else if (m > 10)
+						{
+							key = 10000002;
+						}
+					}
+				}
+
+
 			}
 
 			else if (key == 10000)
@@ -914,24 +876,31 @@ int main()
 			else if (key == 10000000)
 			{
 				a = false;
-
+	
 				window.draw(fon_7_sprite);
 
 				mox.text.setPosition(600, 480);
-
+				
 				window.draw(mox.text);
 			}
 
 			else if (key == 10000001)
 			{
 				a = false;
-
+	
 				window.draw(fon_7_sprite);
 
 				oreo.text.setPosition(700, 480);
-
+				
 				window.draw(oreo.text);
 			 }
+
+			else if (key == 10000002)
+			{
+				a = false;
+
+				window.draw(fon_7_sprite);
+			}
 
 			else
 			{
