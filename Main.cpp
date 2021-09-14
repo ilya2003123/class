@@ -125,7 +125,7 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Class for you"/*, sf::Style::Fullscreen*/);
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Class for you", sf::Style::Fullscreen);
 	window.setFramerateLimit(30);
 
 	sf::Font font;
@@ -253,10 +253,31 @@ int main()
 	sf::Sprite bab_sprite;
 	bab_sprite.setTexture(bab_texture);
 
+	sf::Music music_1;
+	music_1.openFromFile("music/11.wav");
+	music_1.setLoop(true); // «ацикливание музыки (повтор)
+
+	const int coll = 10;
+
+	sf::Texture t[coll];
+
+	for(int i = 1; i <= coll; i++)
+	{
+		t[i - 1].loadFromFile("image/" + std::to_string(i) + ".png");
+	}
+
+	sf::Sprite p[coll];
+
+	for (int i = 1; i <= coll; i++)
+	{
+		p[i - 1].setTexture(t[i - 1]);
+	}
+
 	sf::Music music;
-	
 
 	int key = -1;
+	
+	double current_slide = 0;
 
 	bool a = true;
 
@@ -268,12 +289,20 @@ int main()
 
 	pechenki oreo_mini, oreo, babushka;
 
-	
+	sf::Clock clock; // „асы - засекают врем€
 
 
 	while (window.isOpen())
 
 	{
+		sf::Time elapsed1 = clock.getElapsedTime(); //ѕолучают врем€
+		float time =  elapsed1.asSeconds(); //  преобразуем в секунды
+		clock.restart(); //  сбрасываем в 0
+		current_slide += 0.1f * time; // путь пройденный картинками :D
+
+		if (current_slide >= coll)
+			current_slide = 0;
+
 
 		sf::Event event;
 
@@ -285,6 +314,7 @@ int main()
 			{
 				window.close();
 			}
+
 			if (key > -10000)
 			{
 				if (!txt2.isEmpty())
@@ -334,6 +364,8 @@ int main()
 				txt2.clear();
 
 				music.stop();
+
+				music_1.stop();
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) && a == true)
@@ -354,6 +386,8 @@ int main()
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::C) && a == true)
 			{
 				key = 10000;
+
+				music_1.play();
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
@@ -366,7 +400,7 @@ int main()
 		}
 
 
-		window.clear();
+		window.clear(sf::Color(94, 2, 100, 0));
 
 		if (key == 1)
 		{
@@ -690,7 +724,7 @@ int main()
 			{
 				a = false;
 
-				window.draw(fon_6_sprite);
+				window.draw(p[(int)(current_slide)]); // преобразование типов, нужен int
 			}
 
 			else if (key == 6)
