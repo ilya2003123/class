@@ -257,7 +257,7 @@ int main()
 	music_1.openFromFile("music/11.wav");
 	music_1.setLoop(true); // Зацикливание музыки (повтор)
 
-	const int coll = 10;
+	const int coll = 7;
 
 	sf::Texture t[coll];
 
